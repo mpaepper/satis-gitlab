@@ -13,3 +13,5 @@ bin/satis-gitlab gitlab-to-config \
     #--gitlab-namespace 'Diverse - Gitolite' \ To filter for specific namespaces
 
 bin/satis-gitlab build satis.json web
+
+echo "" > /var/log/satisCron.log # clean up diff log file

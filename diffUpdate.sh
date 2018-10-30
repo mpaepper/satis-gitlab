@@ -28,9 +28,8 @@ then
 fi
 
 cd $SATIS_ROOT
-echo "" > /var/log/satisCron.log # clean up log file
 
-bash generateJsonFromInputs.sh $allChangedRepos > diff.json
+bash generateJsonFromInputs.sh $allChangedRepos >> diff.json
 for repo in $allChangedRepos
 do
    bin/satis-gitlab build --repository-url $repo diff.json web/ --skip-errors # Update one repo at a time to only overwrite that one
