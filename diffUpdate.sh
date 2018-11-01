@@ -29,7 +29,7 @@ fi
 
 cd $SATIS_ROOT
 
-bash generateJsonFromInputs.sh $allChangedRepos >> diff.json
+bash generateJsonFromInputs.sh $allChangedRepos > diff.json
 for repo in $allChangedRepos
 do
    bin/satis-gitlab build --repository-url $repo diff.json web/ --skip-errors # Update one repo at a time to only overwrite that one
